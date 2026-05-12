@@ -2,47 +2,76 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <title>Arab Retraction Watch | مرصد السحب العلمي العربي</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma; margin: 0; background: #f0f2f5; font-size: 13px; }
-        .nav { background: #24292e; color: white; padding: 8px 20px; display: flex; justify-content: space-between; }
-        .container { padding: 15px; }
-        table { width: 100%; border-collapse: collapse; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-        th { background: #f6f8fa; border: 1px solid #d1d5da; padding: 8px; text-align: right; }
-        td { border: 1px solid #d1d5da; padding: 6px 10px; vertical-align: middle; }
-        .badge { background: #ffdce0; color: #cf222e; padding: 3px 6px; border-radius: 12px; font-weight: bold; font-size: 11px; }
-        select { font-size: 12px; padding: 2px; width: 100%; border: 1px solid #ccc; }
+        :root { --primary: #2c3e50; --danger: #c0392b; --text: #333; }
+        body { font-family: 'Segoe UI', Tahoma; margin: 0; background: #f8f9fa; color: var(--text); font-size: 12px; }
+        .header { background: var(--primary); color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .stats-bar { background: #fff; padding: 5px 20px; border-bottom: 1px solid #ddd; font-weight: bold; color: var(--primary); }
+        
+        /* واجهة كثيفة جداً (Dense UI) */
+        .main-content { padding: 15px; }
+        table { width: 100%; border-collapse: collapse; background: white; table-layout: fixed; }
+        th { background: #f1f1f1; border: 1px solid #ccc; padding: 6px; text-align: right; position: sticky; top: 0; }
+        td { border: 1px solid #eee; padding: 5px 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        tr:hover { background-color: #fdfdfd; cursor: pointer; }
+
+        /* الألوان التنبيهية لمحاكاة Retraction Watch */
+        .reason-tag { background: #eee; padding: 2px 5px; border-radius: 3px; border: 1px solid #ddd; font-size: 11px; }
+        .status-retracted { color: var(--danger); font-weight: bold; }
+        .link-btn { color: #2980b9; text-decoration: none; font-weight: bold; }
+        
+        /* تحديد أحجام الأعمدة لاستغلال الشاشة */
+        .col-title { width: 30%; }
+        .col-author { width: 20%; }
+        .col-journal { width: 15%; }
+        .col-reason { width: 20%; }
+        .col-date { width: 10%; }
+        .col-link { width: 5%; }
     </style>
 </head>
 <body>
-    <div class="nav">
-        <strong>مرصد السحب العلمي العربي (Arab Retraction Watch)</strong>
-        <span>تنسيق MARC21</span>
-    </div>
-    <div class="container">
-        <table>
-            <thead>
-                <tr>
-                    <th style="width: 40%;">العنوان (245)</th>
-                    <th style="width: 25%;">المؤلف (100/700)</th>
-                    <th style="width: 20%;">سبب السحب (قائمة منسدلة)</th>
-                    <th>الحالة</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>تطبيقات الذكاء الاصطناعي في المكتبات</td>
-                    <td>الصديق بن سليمان؛ محمد بن موسى</td>
-                    <td>
-                        <select>
-                            <option value="plagiarism">انتحال علمي</option>
-                            <option value="data">أخطاء في البيانات</option>
-                            <option value="duplicate" selected>نشر مكرر</option>
-                        </select>
-                    </td>
-                    <td><span class="badge">🔴 مسحوب</span></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+
+<div class="header">
+    <div style="font-size: 18px; font-weight: bold;">Arab Retraction Watch (ARW)</div>
+    <div>نظام محاكاة قاعدة البيانات العالمية - تنسيق MARC21</div>
+</div>
+
+<div class="stats-bar">
+    إجمالي الأبحاث المرصودة: 1 | آخر تحديث: مايو 2026
+</div>
+
+<div class="main-content">
+    <table>
+        <thead>
+            <tr>
+                <th class="col-title">العنوان (245)</th>
+                <th class="col-author">المؤلف (100/700)</th>
+                <th class="col-journal">المجلة (773)</th>
+                <th class="col-reason">سبب السحب (منسدلة)</th>
+                <th class="col-date">تاريخ السحب</th>
+                <th class="col-link">الرابط</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td title="تطبيقات الذكاء الاصطناعي في المكتبات">تطبيقات الذكاء الاصطناعي في المكتبات</td>
+                <td title="الصديق بن سليمان؛ محمد بن موسى">الصديق بن سليمان؛ محمد بن موسى</td>
+                <td>مجلة ليبيا للعلوم</td>
+                <td>
+                    <select class="reason-tag">
+                        <option>انتحال علمي (Plagiarism)</option>
+                        <option>أخطاء في البيانات (Data Error)</option>
+                        <option selected>نشر مكرر (Duplicate Publication)</option>
+                        <option>نزاع ملكية (Authorship Dispute)</option>
+                    </select>
+                </td>
+                <td>2026-05-12</td>
+                <td><a href="#" class="link-btn">🔗</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 </body>
 </html>
