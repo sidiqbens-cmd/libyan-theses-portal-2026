@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma; margin: 0; background: #f0f2f5; font-size: 13px; }
+        .nav { background: #24292e; color: white; padding: 8px 20px; display: flex; justify-content: space-between; }
+        .container { padding: 15px; }
+        table { width: 100%; border-collapse: collapse; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        th { background: #f6f8fa; border: 1px solid #d1d5da; padding: 8px; text-align: right; }
+        td { border: 1px solid #d1d5da; padding: 6px 10px; vertical-align: middle; }
+        .badge { background: #ffdce0; color: #cf222e; padding: 3px 6px; border-radius: 12px; font-weight: bold; font-size: 11px; }
+        select { font-size: 12px; padding: 2px; width: 100%; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <strong>مرصد السحب العلمي العربي (Arab Retraction Watch)</strong>
+        <span>تنسيق MARC21</span>
+    </div>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 40%;">العنوان (245)</th>
+                    <th style="width: 25%;">المؤلف (100/700)</th>
+                    <th style="width: 20%;">سبب السحب (قائمة منسدلة)</th>
+                    <th>الحالة</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>تطبيقات الذكاء الاصطناعي في المكتبات</td>
+                    <td>الصديق بن سليمان؛ محمد بن موسى</td>
+                    <td>
+                        <select>
+                            <option value="plagiarism">انتحال علمي</option>
+                            <option value="data">أخطاء في البيانات</option>
+                            <option value="duplicate" selected>نشر مكرر</option>
+                        </select>
+                    </td>
+                    <td><span class="badge">🔴 مسحوب</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
